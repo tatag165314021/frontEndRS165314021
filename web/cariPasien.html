@@ -1,0 +1,152 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>RSSP | Cari Pasien</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" type="text/css" href="css/coin-slider.css" />
+        <script type="text/javascript" src="js/cufon-yui.js"></script>
+        <script type="text/javascript" src="js/cufon-titillium-900.js"></script>
+        <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
+        <script type="text/javascript" src="js/coin-slider.min.js"></script>
+    </head>
+    <body>
+        <div class="main">
+            <div class="header">
+                <div class="header_resize">
+                    <div class="logo">
+                        <h1><a href="index.html"><span>RUMAH SAKIT SEHAT PAINGAN YOGYAKARTA</span></a></h1>
+                    </div>
+                    <div class="menu_nav">
+                        <ul>
+                            <li><a href="index.html"><span>Beranda</span></a></li>
+                            <li class="active"><a href="about.html"><span>About Us</span></a></li>
+                            <li><a href="contact.html"><span>Contact Us</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="clr"></div>
+                    <div class="slider">
+                        <div id="coin-slider"> <a href="#"><img src="images/slide1.jpg" width="960" height="360" alt="" /></a> <a href="#"><img src="images/slide2.jpg" width="960" height="360" alt="" /></a> <a href="#"><img src="images/slide3.jpg" width="960" height="360" alt="" /></a> </div>
+                        <div class="clr"></div>
+                    </div>
+                    <div class="clr"></div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="content_resize">
+                    <div class="mainbar">
+                        <form class="form">
+                            <div class="form-group">
+                                <h1>Cari Pasien</h1>
+                                <div class="contact-form">
+                                    <table>
+                                        <tr><td>No Rekam Medis</td> <td>:</td> <td><input type="text" id="nrm"/> <button type="button" onclick="loadDoc()" id="btn">Cari</button></td></tr>
+                                    </table>
+
+                                    <br/><br/><br/><h2><strong>Hasil Pencarian</strong></h2><br/>
+                                    <table>
+                                        <tr><td>Nama</td> <td>:</td> <td><input type="text" id="nama" value=""/></td></tr>
+                                        <tr><td>NIK</td> <td>:</td> <td><input type="text" id="nik" value=""/></td></tr>
+                                        <tr><td>Alamat</td> <td>:</td> <td><input type="text" id="alamat" value=""/></td></tr>
+                                        <tr><td>Tanggal Lahir</td> <td>:</td> <td><input type="text" id="tanggalLahir" value=""/></td></tr>
+                                        <tr><td>Kelamin</td> <td>:</td><td><input type="text" id="kelamin" value=""/></td></tr>
+
+                                    </table>
+                                    <script>
+                                        function loadDoc() {
+
+                                            var url = "http://202.94.83.190:8080/165314021RS3/webresources/pasien/cariPasien?noRm=" + nrm.value;
+                                            var xhttp = new XMLHttpRequest();
+                                            xhttp.open("GET", url, true);
+                                            xhttp.send();
+                                            xhttp.onreadystatechange = function () {
+                                                if (this.readyState == 4 && this.status == 200) {
+                                                    var objj = JSON.parse(this.responseText);
+                                                    document.getElementById("nama").value = objj.nama;
+                                                    document.getElementById("nik").value = objj.nik;
+                                                    document.getElementById("alamat").value = objj.alamat;
+                                                    document.getElementById("tanggalLahir").value = objj.tanggalLahir;
+                                                    document.getElementById("kelamin").value = objj.kelamin;
+                                                }
+                                            };
+                                        }
+                                    </script>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="sidebar">
+                        <div class="gadget">
+                            <h2 class="star"><span>Pilihan</span> Menu</h2>
+                            <div class="clr"></div>
+                            <ul class="sb_menu">
+                                <li><a href="login.html">Pendaftaran Pasien</a></li>
+                                <li><a href="login1.html">Tambah Klinik</a></li>
+                                <li><a href="login2.html">Tambah Dokter</a></li>
+                               <li><a href="login3.html">Pendaftaran Antrian</a></li>
+                                <li><a href="cariPasien.html">Cari Pasien</a></li>
+                                <li><a href="listDokter.html">Dokter Spesialis</a></li>
+                                <li><a href="listKlinik.html">Klinik Spesialis</a></li>
+                                 <li><a href="listAntrian.html">List Antrian</a></li>
+                            </ul>
+                        </div>
+                        <div class="gadget">
+                            <h2 class="star"><span>Sponsors</span></h2>
+                            <a href="contact.html"></a>
+                            <div class="clr"></div>
+                            <ul class="ex_menu">
+                                 <li><a href="http://www.BUMN.go.id"  target="_blank" rel="nofollow">BUMN</a><br />
+                                    Badan Usaha Milik Negara</li>
+                                <li><a href="http://ypp.co.id" target="_blank" rel="nofollow">Yayasan Pundi Amal Indosiar</a><br />
+                                    Yayasan Membantu Korban Bencana</li>
+                                <li><a href="http://pln.co.id" target="_blank" rel="nofollow">PLN</a><br />
+                                    Perusahaan Listrik Negara</li>
+                                <li><a href="http://kimiafarma.co.id" target="_blank" rel="nofollow">Kimia Farma</a><br />
+                                    Perusahaan Obat Indonesia</li>
+                                <li><a href="http://kalbe.co.id" target="_blank" rel="nofollow">Kalbe</a><br />
+                                    Perusahaan Obat Indonesia</li>
+                                <li><a href="http://idionline.org" target="_blank" rel="nofollow">IDI</a><br />
+                                    Ikatan Dokter Indonesia</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="clr"></div>
+                </div>
+            </div>
+            <div class="fbg">
+                <div class="fbg_resize">
+                    <div class="col c1">
+                        <h2><span>Image</span> Gallery</h2>
+                        <a href="#"><img src="images/gal1.jpg" width="75" height="75" alt="" class="gal" /></a> <a href="#"><img src="images/gal2.jpg" width="75" height="75" alt="" class="gal" /></a> <a href="#"><img src="images/gal3.jpg" width="75" height="75" alt="" class="gal" /></a> <a href="#"><img src="images/gal4.jpg" width="75" height="75" alt="" class="gal" /></a> <a href="#"><img src="images/gal5.jpg" width="75" height="75" alt="" class="gal" /></a> <a href="#"><img src="images/gal6.jpg" width="75" height="75" alt="" class="gal" /></a> </div>
+                    <div class="col c2">
+                        <h2><span>Services</span> Overview</h2>
+                        <p>kunjungi</p>
+                        <ul class="fbg_ul">
+                            <li><a href="http://www.facebook.com/">facebook</a></li>
+                            <li><a href="http://www.twitter.com/">twitter</a></li>
+                            <li><a href="http://www.instagram.com/">instagram</a></li>
+                        </ul>
+                    </div>
+                    <div class="col c3">
+                        <h2><span>Contact</span> Us</h2>
+                        <p>Saran dan kritikan anda sangat membantu kami dalam meningkatkan pelayanan agar semakin baik</p>
+                        <p class="contact_info"> <span>Address:</span> 57452-Paingan, Yogyakarta<br />
+                            <span>Telephone:</span> +123-1234-5678<br />
+                            <span>FAX:</span> +458-4578<br />
+                            <span>Others:</span> +301 - 0125 - 01258<br />
+                            <span>E-mail:</span> <a href="http://www.gmail.com/tataghardaya@gmail.com/">tataghardaya@gmail.com</a> </p>
+                    </div>
+                    <div class="clr"></div>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="footer_resize">
+                    <p class="lf">Copyright &copy; <a href="http://www.mancity.uk/">The Citizens</a>. All Rights Reserved</p>
+                    <p class="rf">Design by <a target="_blank" href="http://www.samehadaku.tv/">Hardaya</a></p>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

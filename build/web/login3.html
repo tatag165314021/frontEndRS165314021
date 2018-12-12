@@ -1,0 +1,155 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>RSSP | Login Pendaftaran Antrian</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <link href="css/style.css" rel="stylesheet" type="text/css" />
+        <link rel="stylesheet" type="text/css" href="css/coin-slider.css" />
+        <script type="text/javascript" src="js/cufon-yui.js"></script>
+        <script type="text/javascript" src="js/cufon-titillium-900.js"></script>
+        <script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
+        <script type="text/javascript" src="js/coin-slider.min.js"></script>
+    </head>
+    <body>
+        <div class="main">
+            <div class="header">
+                <div class="header_resize">
+                    <div class="logo">
+                        <h1><a href="index.html"><span>RUMAH SAKIT SEHAT PAINGAN YOGYAKARTA</span></a></h1>
+                    </div>
+                    <div class="menu_nav">
+                        <ul>
+                            <li><a href="index.html"><span>Beranda</span></a></li>
+                            <li class="active"><a href="about.html"><span>About Us</span></a></li>
+                            <li><a href="contact.html"><span>Contact Us</span></a></li>
+                        </ul>
+                    </div>
+                    <div class="clr"></div>
+                    <div class="slider">
+                        <div id="coin-slider"> <a href="#"><img src="images/slide1.jpg" width="960" height="360" alt="" /></a> <a href="#"><img src="images/slide2.jpg" width="960" height="360" alt="" /></a> <a href="#"><img src="images/slide3.jpg" width="960" height="360" alt="" /></a> </div>
+                        <div class="clr"></div>
+                    </div>
+                    <div class="clr"></div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="content_resize">
+                    <div class="mainbar">
+
+ <form action="#" method="post" id="leavereply">
+            <ol>
+              <li>
+                <label for="name">Username</label>
+                <input id="b" name="b" class="text" />
+              </li>
+              <li>
+                <label for="password">Password</label>
+                <input id="a" name="a" class="text" type="password"/>
+              </li>
+           
+              <li>
+                  <br></br>
+                <input type="button" onclick="loadDoc()" value="Login" />
+              </li>
+            </ol>
+          </form>
+                            <script>
+                                function loadDoc() {
+                                    var email = b.value;
+                                    var pw = a.value;
+                                    var url = 'http://202.94.83.190:8080/165314021RS2/webresources/User/login1?email=' + email + '&password=' + pw;
+                                    var xhttp = new XMLHttpRequest();
+                                    xhttp.onreadystatechange = function () {
+                                        if (this.readyState == 4 && this.status == 200) {
+                                            var user = JSON.parse(this.responseText);
+                                            if (user !== null) {
+                                                window.open("pendaftaranAntrian.html", "_self");
+                                            } else {
+                                                alert("Login Gagal");
+                                            }
+
+                                            document.getElementById("demo").innerHTML =
+                                                    this.responseText;
+                                        }
+                                    };
+                                    xhttp.open("GET", url, true);
+                                    xhttp.send();
+                                }
+
+                            </script>
+                    </div>
+                    <div class="sidebar">
+                        <div class="gadget">
+                            <h2 class="star"><span>Pilihan</span> Menu</h2>
+                            <div class="clr"></div>
+                            <ul class="sb_menu">
+                             <li><a href="login.html">Pendaftaran Pasien</a></li>
+                                <li><a href="login1.html">Tambah Klinik</a></li>
+                                <li><a href="login2.html">Tambah Dokter</a></li>
+                                <li><a href="login3.html">Pendaftaran Antrian</a></li>
+                                 <li><a href="cariPasien.html">Cari Pasien</a></li>
+                                <li><a href="listDokter.html">Dokter Spesialis</a></li>
+                                <li><a href="listKlinik.html">Klinik Spesialis</a></li>
+                                 <li><a href="listAntrian.html">List Antrian</a></li>
+                            </ul>
+                        </div>
+                        <div class="gadget">
+                            <h2 class="star"><span>Sponsors</span></h2>
+                            <a href="contact.html"></a>
+                            <div class="clr"></div>
+                            <ul class="ex_menu">
+                                <li><a href="#">BUMN</a><br />
+                                    Badan Usaha Milik Negara</li>
+                                <li><a href="#">Yayasan Pundi Amal Indosiar</a><br />
+                                    Yayasan Membantu Korban Bencana</li>
+                                <li><a href="#">PLN</a><br />
+                                    Perusahaan Listrik Negara</li>
+                                <li><a href="#">Kimia Farma</a><br />
+                                    Perusahaan Obat Indonesia</li>
+                                <li><a href="#">Kalbe</a><br />
+                                    Perusahaan Obat Indonesia</li>
+                                <li><a href="#">IDI</a><br />
+                                    Ikatan Dokter Indonesia</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="clr"></div>
+                </div>
+            </div>
+            <div class="fbg">
+                <div class="fbg_resize">
+                    <div class="col c1">
+                        <h2><span>Image</span> Gallery</h2>
+                        <a href="#"><img src="images/gal1.jpg" width="75" height="75" alt="" class="gal" /></a> <a href="#"><img src="images/gal2.jpg" width="75" height="75" alt="" class="gal" /></a> <a href="#"><img src="images/gal3.jpg" width="75" height="75" alt="" class="gal" /></a> <a href="#"><img src="images/gal4.jpg" width="75" height="75" alt="" class="gal" /></a> <a href="#"><img src="images/gal5.jpg" width="75" height="75" alt="" class="gal" /></a> <a href="#"><img src="images/gal6.jpg" width="75" height="75" alt="" class="gal" /></a> </div>
+                    <div class="col c2">
+                        <h2><span>Services</span> Overview</h2>
+                        <p>kunjungi</p>
+                        <ul class="fbg_ul">
+                            <li><a href="#">facebook</a></li>
+                            <li><a href="#">twitter</a></li>
+                            <li><a href="#">instagram</a></li>
+                        </ul>
+                    </div>
+                    <div class="col c3">
+                        <h2><span>Contact</span> Us</h2>
+                        <p>Saran dan kritikan anda sangat membantu kami dalam meningkatkan pelayanan agar semakin baik</p>
+                        <p class="contact_info"> <span>Address:</span> 57452-Paingan, Yogyakarta<br />
+                            <span>Telephone:</span> +123-1234-5678<br />
+                            <span>FAX:</span> +458-4578<br />
+                            <span>Others:</span> +301 - 0125 - 01258<br />
+                            <span>E-mail:</span> <a href="#">tataghardaya@gmail.com</a> </p>
+                    </div>
+                    <div class="clr"></div>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="footer_resize">
+                     <p class="lf">Copyright &copy; <a href="#">The Citizens</a>. All Rights Reserved</p>
+                    <p class="rf">Design by <a target="_blank" href="#">Hardaya</a></p>
+                    <div style="clear:both;"></div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
